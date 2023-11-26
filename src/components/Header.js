@@ -2,7 +2,7 @@ import React from 'react';
 import { useCartProvider } from '../context/cardContext';
 import { Link } from 'react-router-dom';
 
-export const Header = () => {
+export const Header = ({ isProductPage }) => {
 	const { cartCount } = useCartProvider();
 	return (
 		<div
@@ -25,10 +25,18 @@ export const Header = () => {
 					padding: '20px',
 				}}
 			>
-				<Link to="/product" style={{ textDecoration: 'none' }}>
-					Product
-				</Link>
-				<h4>{`Cart Items:${cartCount?.length}`}</h4>
+				{isProductPage ? null : (
+					<Link
+						data-testid="product-link"
+						to="/product"
+						style={{ textDecoration: 'none' }}
+					>
+						Product
+					</Link>
+				)}
+				<h4
+					data-testid={isProductPage ? 'cart-product' : 'cart-landing'}
+				>{`Cart Items:${cartCount?.length}`}</h4>
 			</div>
 		</div>
 	);

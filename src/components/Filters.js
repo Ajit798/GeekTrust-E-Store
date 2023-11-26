@@ -4,6 +4,7 @@ import { mockFiltersData } from '../mocks/mockData';
 export const Filters = ({ handleFilter }) => {
 	return (
 		<div
+			data-testid="filter-id"
 			style={{
 				height: 'max-content',
 				width: '100%',
@@ -26,7 +27,7 @@ export const Filters = ({ handleFilter }) => {
 											handleFilter(event, checkbox, filter.name)
 										}
 									/>
-									<label id="checkbox-label">{checkbox}</label>
+									<label htmlFor="checkbox-label">{checkbox}</label>
 								</div>
 							);
 						})}

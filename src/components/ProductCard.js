@@ -5,6 +5,7 @@ export const ProductCard = ({ src, price, item }) => {
 	const { handleCartUpdate, itemQuantity } = useCartProvider();
 	return (
 		<div
+			data-testid="product-card-id"
 			style={{
 				width: '20%',
 				height: 'auto',
@@ -27,6 +28,7 @@ export const ProductCard = ({ src, price, item }) => {
 				}}
 			>
 				<h4>{`Rs ${price}`}</h4>
+				<h4>{item.name}</h4>
 				<button
 					style={{ padding: '20px', margin: '20px', borderRadius: '20px' }}
 					onClick={() =>

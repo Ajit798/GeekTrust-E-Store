@@ -6,6 +6,7 @@ export const SearchBar = ({ handleChange }) => {
 		<div>
 			<input
 				name="search-bar"
+				data-testid="search-test-bar"
 				placeholder="Search for products...."
 				onChange={(event) => setSearchValue(event.target.value)}
 				style={{

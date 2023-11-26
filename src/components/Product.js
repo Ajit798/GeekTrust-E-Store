@@ -22,7 +22,7 @@ export const Product = () => {
 	}, [cartCount]);
 	return (
 		<div>
-			<Header />
+			<Header isProductPage />
 			<div
 				style={{
 					display: 'flex',
@@ -30,7 +30,7 @@ export const Product = () => {
 					flexDirection: 'column',
 				}}
 			>
-				<h4>Shopping Cart</h4>
+				<h4 data-testid="shopping-test">Shopping Cart</h4>
 				<div>
 					{cartItems?.map((item) => {
 						return (
